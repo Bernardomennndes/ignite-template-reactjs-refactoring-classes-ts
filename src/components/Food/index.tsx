@@ -7,7 +7,7 @@ import { Container } from './styles';
 interface FoodItemProps {
   id: number;
   name: string;
-  price: number;
+  price: string;
   image: string;
   description: string;
   available: boolean;
