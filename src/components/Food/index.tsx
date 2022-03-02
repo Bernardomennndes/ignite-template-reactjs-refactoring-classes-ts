@@ -7,7 +7,7 @@ import { Container } from './styles';
 interface FoodItemProps {
   id: number;
   name: string;
-  price: number;
+  price: string;
   image: string;
   description: string;
   available: boolean;
@@ -15,11 +15,11 @@ interface FoodItemProps {
 
 interface FoodProps {
   food: FoodItemProps;
-  handleDelete: (id : number) => void;
-  handleEditFood: (food : FoodItemProps) => void;
+  handleDelete: (id: number) => void;
+  handleEditFood: (food: FoodItemProps) => void;
 }
 
-export function Food({food, handleDelete, handleEditFood}: FoodProps) {
+export function Food({ food, handleDelete, handleEditFood }: FoodProps) {
 
   const [isAvailable, setIsAvailable] = useState<boolean>(food.available);
 
@@ -28,6 +28,7 @@ export function Food({food, handleDelete, handleEditFood}: FoodProps) {
       ...food,
       available: !isAvailable,
     });
+
     setIsAvailable(!isAvailable);
   }
 
@@ -85,6 +86,7 @@ export function Food({food, handleDelete, handleEditFood}: FoodProps) {
       </section>
     </Container>
   );
+
 }
 ;
 
